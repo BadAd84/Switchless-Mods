@@ -61,8 +61,8 @@
 ;
 ; mode description:
 ;
-; mode 0x00 = PAL:           50Hz, LED green   (alternative: green)
-; mode 0x01 = NTSC:          60Hz, LED red     (alternative: orange)
+; mode 0x00 = NTSC:          60Hz, LED red     (alternative: orange)
+; mode 0x01 = PAL:           50Hz, LED green   (alternative: green)
 ; mode 0x02 = JAP NTSC:      60Hz, LED orange  (alternative: red)
 ;      
 ; -----------------------------------------------------------------------
