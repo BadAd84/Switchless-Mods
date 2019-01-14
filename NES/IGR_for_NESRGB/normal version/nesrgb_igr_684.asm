@@ -4,7 +4,7 @@
 ;   NES "In-game reset" (IGR) controller with extended control
 ;   for Viletims NESRGB-PCB (color switch)
 ;
-;   Copyright (C) 2014-2016 by Peter Bartmann <borti4938@gmx.de>
+;   Copyright (C) 2014-2019 by Peter Bartmann <borti4938@gmx.de>
 ;
 ;   This program is free software; you can redistribute it and/or modify
 ;   it under the terms of the GNU General Public License as published by
@@ -63,8 +63,12 @@
 ;   ============================
 ;
 ;   The wire from the reset button to the CIC Pin 7 (NES frontloader) or to the CPU Pin 3
-;   (Famicom) has to be cutted. Please note, that there is a capacitor anywhere at this line.
-;   Please remove that cap completely or make sure that this cap stays at the CIC-/CPU-end.
+;   (Famicom) has to be cutted. Please note, that there is a 4.7uF capacitor anywhere at this line.
+;   Make sure that this cap stays at the CIC-/CPU-end! This is important on cold starts to get
+;   the NES running. If the capacitance is in front of the reset button (cap - reset button - CPU)
+;   please reassemble / rewire the cap such that it is on the CPU side of the reset line
+;   (going to GND). IIRC, this is in the top loader version the case.
+;
 ;   Add a weak resistor (around 10kOhm) between Pin 3 of the PIC and ...
 ;   ... +5V (low-active reset, Pin 2 IGR goes to CPU Pin 3)
 ;   ... GND (high-active reset, Pin 2 IGR goes to CIC Pin 7)
