@@ -258,9 +258,9 @@ mode_delay_loop
 apply_mode ; save mode, set video mode and check if a reset is wanted
     call    save_mode
     btfsc   reg_current_mode, bit_videomode
-    bcf     PORTC, VIDMODE                  ; 50Hz
+    bcf     PORTA, VIDMODE                  ; 50Hz
     btfss   reg_current_mode, bit_videomode
-    bsf     PORTC, VIDMODE                  ; 60Hz
+    bsf     PORTA, VIDMODE                  ; 60Hz
     call    setled
     M_beff  reg_current_mode, reg_previous_mode, idle ; nothing has been changed -> return to idle
     btfsc   PORTA, NRoMC                              ; auto-reset on mode change?
